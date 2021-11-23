@@ -1,11 +1,32 @@
 package com.android45.btvnlistview;
 
 public class Menu {
+    boolean img;
     String foodName;
+    int rate;
     int soluong;
     String foodInfor, ship;
     int time;
     String money;
+
+    public Menu(boolean img, String foodName, int rate, int soluong, String foodInfor, String ship, int time, String money) {
+        this.img = img;
+        this.foodName = foodName;
+        this.rate = rate;
+        this.soluong = soluong;
+        this.foodInfor = foodInfor;
+        this.ship = ship;
+        this.time = time;
+        this.money = money;
+    }
+
+    public boolean isImg() {
+        return img;
+    }
+
+    public void setImg(boolean img) {
+        this.img = img;
+    }
 
     public String getFoodName() {
         return foodName;
@@ -13,6 +34,14 @@ public class Menu {
 
     public void setFoodName(String foodName) {
         this.foodName = foodName;
+    }
+
+    public int getRate() {
+        return rate;
+    }
+
+    public void setRate(int rate) {
+        this.rate = rate;
     }
 
     public int getSoluong() {
@@ -52,15 +81,6 @@ public class Menu {
     }
 
     public void setMoney(String money) {
-        this.money = money;
-    }
-
-    public Menu(String foodName, int soluong, String foodInfor, String ship, int time, String money) {
-        this.foodName = foodName;
-        this.soluong = soluong;
-        this.foodInfor = foodInfor;
-        this.ship = ship;
-        this.time = time;
         this.money = money;
     }
 }
