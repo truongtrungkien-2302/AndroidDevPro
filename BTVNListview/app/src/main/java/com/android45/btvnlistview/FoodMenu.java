@@ -1,12 +1,12 @@
 package com.android45.btvnlistview;
 
 public class FoodMenu {
-    boolean imgMonAn;
+    int imgMonAn;
     String tvMonAn;
     int rbStar;
     String tvSoLuong, tvInfor, tvShip, tvTime, tvMoney;
 
-    public FoodMenu(boolean imgMonAn, String tvMonAn, int rbStar, String tvSoLuong, String tvInfor, String tvShip, String tvTime, String tvMoney) {
+    public FoodMenu(int imgMonAn, String tvMonAn, int rbStar, String tvSoLuong, String tvInfor, String tvShip, String tvTime, String tvMoney) {
         this.imgMonAn = imgMonAn;
         this.tvMonAn = tvMonAn;
         this.rbStar = rbStar;
@@ -17,11 +17,11 @@ public class FoodMenu {
         this.tvMoney = tvMoney;
     }
 
-    public boolean isImgMonAn() {
+    public int getImgMonAn() {
         return imgMonAn;
     }
 
-    public void setImgMonAn(boolean imgMonAn) {
+    public void setImgMonAn(int imgMonAn) {
         this.imgMonAn = imgMonAn;
     }
 

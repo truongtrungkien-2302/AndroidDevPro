@@ -48,9 +48,7 @@ public class AdapterFoodMenu extends BaseAdapter {
 
         FoodMenu foodMenu = foodMenuList.get(i);
 
-        if (foodMenu.isImgMonAn()) imgMonAn.setVisibility(View.VISIBLE);
-        else imgMonAn.setVisibility(View.GONE);
-
+        imgMonAn.setImageResource(foodMenu.getImgMonAn());
         tvMonAn.setText(foodMenu.getTvMonAn());
         rbStar.setNumStars(foodMenu.getRbStar());
         tvSoLuong.setText(foodMenu.getTvSoLuong());

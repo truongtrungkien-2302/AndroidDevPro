@@ -9,14 +9,14 @@
         android:id="@+id/imgMonAn"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/monhue" />
+        android:scaleType="centerCrop" />
 
     <TextView
+        android:layout_marginLeft="5dp"
         android:id="@+id/tvMonAn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imgMonAn"
-        android:text="Món Huế"
         android:textSize="20dp"
         android:textStyle="bold" />
 
@@ -26,6 +26,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvMonAn"
+        android:numStars="5"
+        android:layout_marginLeft="5dp"
         android:layout_toRightOf="@+id/imgMonAn" />
 
     <TextView
@@ -33,39 +35,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvMonAn"
-        android:layout_toRightOf="@+id/rbStar"
-        android:text="50" />
+        android:layout_toRightOf="@+id/rbStar"/>
 
     <TextView
+        android:layout_marginLeft="5dp"
         android:id="@+id/tvInfor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rbStar"
-        android:layout_toRightOf="@+id/imgMonAn"
-        android:text="Phở" />
+        android:layout_toRightOf="@+id/imgMonAn"/>
 
     <TextView
+        android:layout_marginLeft="5dp"
         android:id="@+id/tvShip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvInfor"
-        android:layout_toRightOf="@+id/imgMonAn"
-        android:text="MIỄN PHÍ|" />
+        android:layout_toRightOf="@+id/imgMonAn"/>
 
     <TextView
         android:id="@+id/tvTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvInfor"
-        android:layout_toRightOf="@+id/tvShip"
-        android:text="45min" />
+        android:layout_toRightOf="@+id/tvShip"/>
 
     <TextView
+        android:layout_marginLeft="5dp"
         android:id="@+id/tvMoney"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvTime"
-        android:layout_toRightOf="@+id/imgMonAn"
-        android:text="Tối thiểu 50000" />
+        android:layout_toRightOf="@+id/imgMonAn" />
 
 </RelativeLayout>
