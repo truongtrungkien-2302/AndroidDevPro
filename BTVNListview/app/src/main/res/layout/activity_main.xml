@@ -10,7 +10,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:background="#EA8C02">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -29,6 +30,13 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 app:layout_constraintGuide_percent="0.75" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/doc_phu1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.1" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/doc1"
@@ -51,11 +59,30 @@
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.75" />
 
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/doc_phu2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.85" />
+
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pizza"
                 app:layout_constraintBottom_toBottomOf="@id/ngang2"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/home"
+                android:backgroundTint="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/ngang1"
+                app:layout_constraintEnd_toEndOf="@id/doc_phu1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -65,15 +92,69 @@
                 android:layout_height="0dp"
                 android:gravity="center_vertical|left"
                 android:text="Vietnammm.com"
-                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:textSize="25sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@id/ngang1"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@id/doc_phu1"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/menu"
+                android:backgroundTint="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/ngang1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/doc_phu2"
+                app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:background="@drawable/restaurant"
+                android:backgroundTint="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/doc1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ngang2" />
 
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="10dp"
+                android:background="@drawable/gps"
+                android:backgroundTint="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/doc2"
+                app:layout_constraintStart_toStartOf="@id/doc1"
+                app:layout_constraintTop_toTopOf="@id/ngang2" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="10dp"
+                android:background="@drawable/search"
+                android:backgroundTint="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/doc3"
+                app:layout_constraintStart_toStartOf="@id/doc2"
+                app:layout_constraintTop_toTopOf="@id/ngang2" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="10dp"
+                android:background="@drawable/scrollarrow"
+                android:backgroundTint="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/doc3"
+                app:layout_constraintTop_toTopOf="@id/ngang2" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
