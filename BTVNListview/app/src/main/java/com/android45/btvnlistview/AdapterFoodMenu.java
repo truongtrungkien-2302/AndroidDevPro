@@ -41,7 +41,7 @@ public class AdapterFoodMenu extends BaseAdapter {
         TextView tvMonAn = convertView.findViewById(R.id.tvMonAn);
         RatingBar rbStar = convertView.findViewById(R.id.rbStar);
         TextView tvSoLuong = convertView.findViewById(R.id.tvSoLuong);
-        TextView tvInfor = convertView.findViewById(R.id.tvInfor;
+        TextView tvInfor = convertView.findViewById(R.id.tvInfor);
         TextView tvShip = convertView.findViewById(R.id.tvShip);
         TextView tvTime = convertView.findViewById(R.id.tvTime);
         TextView tvMoney = convertView.findViewById(R.id.tvMoney);
