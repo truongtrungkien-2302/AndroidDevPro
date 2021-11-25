@@ -147,7 +147,7 @@
                 app:layout_constraintStart_toStartOf="@id/doc_phu2"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
+            <EditText
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:background="#EA8C02"
@@ -155,6 +155,7 @@
                 app:layout_constraintEnd_toEndOf="@id/doc_phu2"
                 app:layout_constraintStart_toStartOf="@id/doc_phu1"
                 app:layout_constraintTop_toTopOf="@id/ngang1"
+                android:drawableBottom=""
                 android:text="Cầu Giấy, Hà Nội"
                 android:gravity="center_vertical"
                 android:textColor="@color/white"
