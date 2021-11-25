@@ -147,37 +147,54 @@
                 app:layout_constraintStart_toStartOf="@id/doc_phu2"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
+            <ImageView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:background="#EA8C02"
                 app:layout_constraintBottom_toBottomOf="@id/ngang3"
                 app:layout_constraintEnd_toEndOf="@id/doc_phu2"
                 app:layout_constraintStart_toStartOf="@id/doc_phu1"
-                app:layout_constraintTop_toTopOf="@id/ngang1"
-                android:drawableBottom=""
+                app:layout_constraintTop_toTopOf="@id/ngang1" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/diadiem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.2" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="#EA8C02"
+                android:gravity="center"
                 android:text="Cầu Giấy, Hà Nội"
-                android:gravity="center_vertical"
                 android:textColor="@color/white"
-                android:textSize="15sp"/>
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@id/ngang3"
+                app:layout_constraintEnd_toEndOf="@id/doc2"
+                app:layout_constraintStart_toStartOf="@id/diadiem"
+                app:layout_constraintTop_toTopOf="@id/ngang1" />
 
             <TextView
+                android:id="@+id/tvGiaoHang"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:background="#9A6B27"
-                android:text="Giao hàng"
-                android:textSize="15sp"
-                android:gravity="center_vertical"
                 android:drawableLeft="@drawable/menu1"
+                android:gravity="center_vertical"
+                android:text="Giao hàng"
                 android:textColor="@color/white"
-                app:layout_constraintStart_toStartOf="@id/giaohang_doc1"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@id/giaohang_ngang2"
                 app:layout_constraintEnd_toEndOf="@id/giaohang_doc2"
-                app:layout_constraintTop_toTopOf="@id/giaohang_ngang1"
-                app:layout_constraintBottom_toBottomOf="@id/giaohang_ngang2"/>
+                app:layout_constraintStart_toStartOf="@id/giaohang_doc1"
+                app:layout_constraintTop_toTopOf="@id/giaohang_ngang1" />
 
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="25dp"
+                android:layout_marginHorizontal="35dp"
                 android:background="@drawable/forkandspoon"
                 android:backgroundTint="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -185,8 +202,7 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/ngang2"
-                app:layout_constraintVertical_bias="0.5"
-                android:layout_marginHorizontal="35dp"/>
+                app:layout_constraintVertical_bias="0.5" />
 
             <ImageView
                 android:layout_width="0dp"
