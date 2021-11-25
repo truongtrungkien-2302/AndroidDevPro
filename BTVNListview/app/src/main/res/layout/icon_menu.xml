@@ -42,6 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rbStar"
+        android:textStyle="bold"
         android:layout_marginLeft="5dp"
         android:layout_toRightOf="@+id/imgMonAn" />
 
@@ -50,25 +51,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvInfor"
+        android:textSize="16dp"
         android:layout_gravity="center"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="0dp"
         android:layout_toRightOf="@+id/imgMonAn"
         android:drawableLeft="@drawable/bike"
-        android:drawableRight="@drawable/line"/>
+        android:drawableRight="@drawable/line" />
 
     <TextView
         android:id="@+id/tvTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvInfor"
-        android:drawableLeft="@drawable/clock"
-        android:layout_toRightOf="@+id/tvShip" />
+        android:textSize="16dp"
+        android:layout_toRightOf="@+id/tvShip"
+        android:drawableLeft="@drawable/clock" />
 
     <TextView
         android:id="@+id/tvMoney"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/coins"
+        android:textSize="16dp"
         android:layout_below="@+id/tvTime"
         android:layout_marginLeft="5dp"
         android:layout_toRightOf="@+id/imgMonAn" />

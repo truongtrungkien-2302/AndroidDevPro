@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         foodMenuList.add(new FoodMenu(R.drawable.monhue, "Món Huế", 5, "(52)", "Phở-Mì-Bún, Cơm, Ẩm thực miền Bắc", "Miễn phí", "45min", "Tối thiểu 50.000đ"));
         foodMenuList.add(new FoodMenu(R.drawable.joma, "Joma Bakery Cafe", 5, "(405)", "Bánh ngọt, Salad, Sandwich", "Miễn phí", "40min", "Tối thiểu 200.000đ"));
         foodMenuList.add(new FoodMenu(R.drawable.donerkebab, "Doner Kebab 1995", 5, "", "Món Thổ Nhĩ Kì, Món châu Á khác", "35.000đ", "30min", "Tối thiểu 60.000đ"));
-        foodMenuList.add(new FoodMenu(R.drawable.com, "Cơm Đại Vương - Cơm Đài Loan", 5, "", "Cơm, Món châu Á khác", "50.000đ", "30min", ""));
+        foodMenuList.add(new FoodMenu(R.drawable.com, "Cơm Đại Vương - Cơm Đài Loan", 5, "", "Cơm, Món châu Á khác", "50.000đ", "30min", "Tối thiểu 70.000đ"));
 
         AdapterFoodMenu adapterFoodMenu = new AdapterFoodMenu(foodMenuList);
         lvFood.setAdapter(adapterFoodMenu);
