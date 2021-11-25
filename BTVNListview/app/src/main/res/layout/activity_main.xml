@@ -43,7 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.15" />
+                app:layout_constraintGuide_percent="0.13" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/doc1"
@@ -64,7 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.55" />
+                app:layout_constraintGuide_percent="0.56" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/doc3"
@@ -78,28 +78,49 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.81" />
+                app:layout_constraintGuide_percent="0.83" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/giaohang_ngang1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.35" />
+                app:layout_constraintGuide_percent="0.36" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/giaohang_ngang2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.55" />
+                app:layout_constraintGuide_percent="0.53" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/doc_phu2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.85" />
+                app:layout_constraintGuide_percent="0.87" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/diadiem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.18" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/btdoc1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.57" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/btdoc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.65" />
 
             <ImageView
                 android:layout_width="0dp"
@@ -108,10 +129,8 @@
                 android:src="@drawable/pizza"
                 app:layout_constraintBottom_toBottomOf="@id/ngang2"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:layout_width="35dp"
@@ -147,40 +166,35 @@
                 app:layout_constraintStart_toStartOf="@id/doc_phu2"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="0dp"></androidx.cardview.widget.CardView>
+
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:background="#EA8C02"
                 app:layout_constraintBottom_toBottomOf="@id/ngang3"
                 app:layout_constraintEnd_toEndOf="@id/doc_phu2"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@id/doc_phu1"
-                app:layout_constraintTop_toTopOf="@id/ngang1"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/diadiem"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.2" />
+                app:layout_constraintTop_toTopOf="@id/ngang1" />
 
             <EditText
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:layout_marginHorizontal="7dp"
                 android:background="#EA8C02"
                 android:drawableBottom="@drawable/screenshot"
                 android:gravity="center"
-                android:padding="6dp"
                 android:text="Cầu Giấy, Hà Nội"
                 android:textColor="@color/white"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="@id/giaohang_ngang2"
-                app:layout_constraintEnd_toEndOf="@id/doc2"
+                app:layout_constraintEnd_toEndOf="@id/giaohang_doc1"
                 app:layout_constraintStart_toStartOf="@id/diadiem"
                 app:layout_constraintTop_toTopOf="@id/giaohang_ngang1" />
 
-            <TextView
+            <ImageView
                 android:id="@+id/tvGiaoHang"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -195,6 +209,28 @@
                 app:layout_constraintStart_toStartOf="@id/giaohang_doc1"
                 app:layout_constraintTop_toTopOf="@id/giaohang_ngang1" />
 
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="2dp"
+                android:backgroundTint="#EA8C02"
+                app:layout_constraintBottom_toBottomOf="@id/giaohang_ngang2"
+                app:layout_constraintEnd_toEndOf="@id/btdoc2"
+                app:layout_constraintStart_toStartOf="@+id/btdoc1"
+                app:layout_constraintTop_toTopOf="@+id/giaohang_ngang1" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:text="Giao hàng"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toBottomOf="@id/giaohang_ngang2"
+                app:layout_constraintEnd_toEndOf="@id/giaohang_doc2"
+                app:layout_constraintStart_toStartOf="@+id/btdoc2"
+                app:layout_constraintTop_toTopOf="@+id/giaohang_ngang1" />
+
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="25dp"
@@ -203,10 +239,8 @@
                 android:backgroundTint="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/doc1"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/ngang2"
-                app:layout_constraintVertical_bias="0.5" />
+                app:layout_constraintTop_toTopOf="@id/ngang2" />
 
             <ImageView
                 android:layout_width="0dp"
@@ -252,6 +286,11 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2.5">
+
+        <HorizontalScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scrollbars="vertical" />
 
         <ListView
             android:id="@+id/lvFood"

@@ -3,10 +3,10 @@ package com.android45.btvnlistview;
 public class FoodMenu {
     int imgMonAn;
     String tvMonAn;
-    int rbStar;
+    float rbStar;
     String tvSoLuong, tvInfor, tvShip, tvTime, tvMoney;
 
-    public FoodMenu(int imgMonAn, String tvMonAn, int rbStar, String tvSoLuong, String tvInfor, String tvShip, String tvTime, String tvMoney) {
+    public FoodMenu(int imgMonAn, String tvMonAn, float rbStar, String tvSoLuong, String tvInfor, String tvShip, String tvTime, String tvMoney) {
         this.imgMonAn = imgMonAn;
         this.tvMonAn = tvMonAn;
         this.rbStar = rbStar;
@@ -33,11 +33,11 @@ public class FoodMenu {
         this.tvMonAn = tvMonAn;
     }
 
-    public int getRbStar() {
+    public float getRbStar() {
         return rbStar;
     }
 
-    public void setRbStar(int rbStar) {
+    public void setRbStar(float rbStar) {
         this.rbStar = rbStar;
     }
 

@@ -54,7 +54,7 @@ public class AdapterFoodMenu extends BaseAdapter {
 
         imgMonAn.setImageResource(foodMenu.getImgMonAn());
         tvMonAn.setText(foodMenu.getTvMonAn());
-        rbStar.setNumStars(foodMenu.getRbStar());
+        rbStar.setRating(foodMenu.getRbStar());
         tvSoLuong.setText(foodMenu.getTvSoLuong());
         tvInfor.setText(foodMenu.getTvInfor());
         tvShip.setText(foodMenu.getTvShip());
