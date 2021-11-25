@@ -32,11 +32,18 @@
                 app:layout_constraintGuide_percent="0.75" />
 
             <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/ngang3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.65" />
+
+            <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/doc_phu1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.1" />
+                app:layout_constraintGuide_percent="0.15" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/doc1"
@@ -73,12 +80,14 @@
                 android:src="@drawable/pizza"
                 app:layout_constraintBottom_toBottomOf="@id/ngang2"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
             <ImageView
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:background="@drawable/home"
                 android:backgroundTint="@color/white"
                 app:layout_constraintBottom_toBottomOf="@id/ngang1"
@@ -110,19 +119,34 @@
                 app:layout_constraintStart_toStartOf="@id/doc_phu2"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="#EA8C02"
+                app:layout_constraintBottom_toBottomOf="@id/ngang3"
+                app:layout_constraintEnd_toEndOf="@id/doc_phu2"
+                app:layout_constraintStart_toStartOf="@id/doc_phu1"
+                app:layout_constraintTop_toTopOf="@id/ngang1"
+                android:text="Cầu Giấy, Hà Nội"
+                android:textColor="@color/white"
+                android:textSize="15dp"/>
+
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="25dp"
-                android:background="@drawable/restaurant"
+                android:background="@drawable/forkandspoon"
                 android:backgroundTint="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/doc1"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/ngang2" />
+                app:layout_constraintTop_toTopOf="@id/ngang2"
+                app:layout_constraintVertical_bias="0.5"
+                android:layout_marginHorizontal="35dp"/>
 
             <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:layout_marginHorizontal="30dp"
                 android:layout_marginVertical="10dp"
                 android:background="@drawable/gps"
@@ -133,8 +157,8 @@
                 app:layout_constraintTop_toTopOf="@id/ngang2" />
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="25dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:layout_marginHorizontal="30dp"
                 android:layout_marginVertical="10dp"
                 android:background="@drawable/search"
@@ -145,8 +169,8 @@
                 app:layout_constraintTop_toTopOf="@id/ngang2" />
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="25dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:layout_marginHorizontal="30dp"
                 android:layout_marginVertical="10dp"
                 android:background="@drawable/scrollarrow"

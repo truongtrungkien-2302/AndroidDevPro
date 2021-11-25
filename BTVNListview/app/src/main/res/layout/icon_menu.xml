@@ -12,10 +12,10 @@
         android:scaleType="centerCrop" />
 
     <TextView
-        android:layout_marginLeft="5dp"
         android:id="@+id/tvMonAn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
         android:layout_toRightOf="@+id/imgMonAn"
         android:textSize="20dp"
         android:textStyle="bold" />
@@ -26,46 +26,51 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvMonAn"
-        android:numStars="5"
         android:layout_marginLeft="5dp"
-        android:layout_toRightOf="@+id/imgMonAn" />
+        android:layout_toRightOf="@+id/imgMonAn"
+        android:numStars="5" />
 
     <TextView
         android:id="@+id/tvSoLuong"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvMonAn"
-        android:layout_toRightOf="@+id/rbStar"/>
+        android:layout_toRightOf="@+id/rbStar" />
 
     <TextView
-        android:layout_marginLeft="5dp"
         android:id="@+id/tvInfor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rbStar"
-        android:layout_toRightOf="@+id/imgMonAn"/>
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/imgMonAn" />
 
     <TextView
-        android:layout_marginLeft="5dp"
         android:id="@+id/tvShip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvInfor"
-        android:layout_toRightOf="@+id/imgMonAn"/>
+        android:layout_gravity="center"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="0dp"
+        android:layout_toRightOf="@+id/imgMonAn"
+        android:drawableLeft="@drawable/bike"
+        android:drawableRight="@drawable/line"/>
 
     <TextView
         android:id="@+id/tvTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvInfor"
-        android:layout_toRightOf="@+id/tvShip"/>
+        android:drawableLeft="@drawable/clock"
+        android:layout_toRightOf="@+id/tvShip" />
 
     <TextView
-        android:layout_marginLeft="5dp"
         android:id="@+id/tvMoney"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvTime"
+        android:layout_marginLeft="5dp"
         android:layout_toRightOf="@+id/imgMonAn" />
 
 </RelativeLayout>
