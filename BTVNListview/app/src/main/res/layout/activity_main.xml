@@ -166,10 +166,6 @@
                 app:layout_constraintStart_toStartOf="@id/doc_phu2"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="0dp"></androidx.cardview.widget.CardView>
-
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
