@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name='AndroidIntentRemake_Persistence_7'
