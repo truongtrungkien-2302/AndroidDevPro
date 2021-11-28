@@ -1,7 +1,5 @@
 package com.android45.btvnlistview;
 
-import android.graphics.Color;
-import android.graphics.drawable.LayerDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
