@@ -8,8 +8,6 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import androidx.core.graphics.drawable.DrawableCompat;
-
 import java.util.List;
 
 public class AdapterFoodMenu extends BaseAdapter {
