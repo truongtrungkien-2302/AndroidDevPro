@@ -13,9 +13,20 @@
         android:layout_weight="0.6">
 
         <TextView
+            android:id="@+id/tvWelcome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Welcome TTK"
+            android:text="Welcome "
+            android:textColor="#08432F"
+            android:textSize="25dp"
+            android:textStyle="italic|bold" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tvWelcome"
+            android:text="TTK"
             android:textColor="#08432F"
             android:textSize="25dp"
             android:textStyle="italic|bold" />
@@ -57,24 +68,45 @@
 
     </RelativeLayout>
 
-    <TextView
-        android:id="@+id/order"
-        android:layout_margin="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Order:"
-        android:textColor="#08432F"
-        android:textSize="30dp"
-        android:textStyle="italic"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5">
 
-    <TextView
-        android:layout_margin="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Total Price:"
-        android:layout_below="@id/order"
-        android:textColor="#08432F"
-        android:textSize="30dp"
-        android:textStyle="italic"/>
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Total Price: "
+            android:textColor="#08432F"
+            android:textSize="30dp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/tvMoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_toRightOf="@id/tvPrice"
+            android:layout_marginTop="15dp"
+            android:text="0"
+            android:textColor="#08432F"
+            android:textSize="30dp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_toRightOf="@+id/tvMoney"
+            android:layout_marginBottom="5dp"
+            android:text="VNĐ"
+            android:textColor="#08432F"
+            android:textSize="30dp"
+            android:textStyle="italic" />
+    </RelativeLayout>
 
 </LinearLayout>

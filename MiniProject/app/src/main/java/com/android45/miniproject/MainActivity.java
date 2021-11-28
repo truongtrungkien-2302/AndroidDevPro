@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         lvFood = findViewById(R.id.lvFood);
 
         foodMenuList = new ArrayList<>();
-        foodMenuList.add(new FoodMenu(R.drawable.eggsand, "Egg Salad Sandwich", 4.5F, "60.000"));
+        foodMenuList.add(new FoodMenu(R.drawable.eggsand, "Egg Salad Sandwich", 4, "60.000"));
         foodMenuList.add(new FoodMenu(R.drawable.ham, "Ham & Cheese Sandwich", 5, "65.000"));
         foodMenuList.add(new FoodMenu(R.drawable.chicken, "Chicken Salad Sandwich", 4, "75.000"));
         foodMenuList.add(new FoodMenu(R.drawable.turkey, "Avocado & Turkey Sandwich", 4.5F, "70.000"));
