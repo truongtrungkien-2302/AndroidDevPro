@@ -2,10 +2,13 @@ package com.android45.miniproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -17,23 +20,34 @@ public class MainActivity extends AppCompatActivity {
     List<FoodMenu> foodMenuList;
     FoodMenu foodMenu1, foodMenu2, foodMenu3, foodMenu4, foodMenu5;
     ImageView imgAdd, imgRemove;
-    TextView tvCart;
+    TextView tvCart, tvName;
+    EditText etUsername, etPassword;
+    Button btnLogIn;
+    LinearLayout linearFoodMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getUserName();
-        addFoodMenuList();
-//        foodAddAndRemove();
-    }
-
-    private void getUserName() {
-
-    }
-
-    private void addFoodMenuList() {
         lvFood = findViewById(R.id.lvFood);
+        imgAdd = findViewById(R.id.imgAdd);
+        imgRemove = findViewById(R.id.imgRemove);
+        tvCart = findViewById(R.id.tvCart);
+        tvName = findViewById(R.id.tvName);
+        etUsername = findViewById(R.id.etUsername);
+        etPassword = findViewById(R.id.etPassword);
+        btnLogIn = findViewById(R.id.btnLogIn);
+//        linearFoodMenu = findViewById();
+
+        btnLogIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String username = etUsername.getText().toString();
+                tvName.setText(username);Intent intent = new Intent(getBaseContext(), ActivityFoodMenu.class);
+                startActivity(intent);
+            }
+        });
+
         foodMenuList = new ArrayList<>();
         foodMenuList.add(new FoodMenu(R.drawable.eggsand, "Egg Salad Sandwich", 4, "60.000"));
         foodMenuList.add(new FoodMenu(R.drawable.ham, "Ham & Cheese Sandwich", 5, "65.000"));
@@ -43,18 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
         AdapterFood adapterFood = new AdapterFood(foodMenuList);
         lvFood.setAdapter(adapterFood);
-    }
 
-//    private void foodAddAndRemove() {
-//        imgAdd = findViewById(R.id.imgAdd);
-//        imgRemove = findViewById(R.id.imgRemove);
-//        tvCart = findViewById(R.id.tvCart);
-//
-//        imgAdd.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                tvCart.setText(tvCart.getText().toString() + "1");
-//            }
-//        });
-//    }
+
+    }
 }
