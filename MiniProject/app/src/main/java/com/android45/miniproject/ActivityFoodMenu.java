@@ -1,6 +1,8 @@
 package com.android45.miniproject;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,16 +13,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ActivityFoodMenu extends AppCompatActivity {
-    ListView lvFood;
+//    ListView lvFood;
+    RecyclerView rvFood;
     List<FoodMenu> foodMenuList;
     FoodMenu foodMenu1, foodMenu2, foodMenu3, foodMenu4, foodMenu5;
     TextView tvName;
+    FoodRecyclerViewAdapter foodRecyclerViewAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_menu);
-        lvFood = findViewById(R.id.lvFood);
+        rvFood = findViewById(R.id.rvFood);
         tvName = findViewById(R.id.tvName);
 
         Intent intent = getIntent();
@@ -35,7 +39,14 @@ public class ActivityFoodMenu extends AppCompatActivity {
         foodMenuList.add(new FoodMenu(R.drawable.turkey, "French fries & Turkey Sandwich", 4.5F, "70.000"));
         foodMenuList.add(new FoodMenu(R.drawable.beef, "Beef Rib Burger", 5, "80.000"));
 
-        AdapterFood adapterFood = new AdapterFood(foodMenuList);
-        lvFood.setAdapter(adapterFood);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getBaseContext(), 1, RecyclerView.VERTICAL, false);
+
+        foodRecyclerViewAdapter = new FoodRecyclerViewAdapter(foodMenuList);
+
+        rvFood.setLayoutManager(layoutManager);
+        rvFood.setAdapter(foodRecyclerViewAdapter);
+
+//        AdapterFood adapterFood = new AdapterFood(foodMenuList);
+//        lvFood.setAdapter(adapterFood);
     }
 }

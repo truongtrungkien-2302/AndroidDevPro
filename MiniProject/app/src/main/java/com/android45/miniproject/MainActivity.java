@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     TextView tvCart, tvName;
     EditText etUsername, etPassword;
     Button btnLogIn;
-    LinearLayout linearFoodMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

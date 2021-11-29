@@ -49,7 +49,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerInParent="true"
             android:layout_marginBottom="5dp"
-            android:text="Light Meals"
+            android:text="@string/food_tittle"
             android:textColor="@color/black"
             android:textSize="30dp"
             android:textStyle="italic" />
@@ -61,8 +61,13 @@
         android:layout_height="0dp"
         android:layout_weight="4">
 
-        <ListView
-            android:id="@+id/lvFood"
+<!--        <ListView-->
+<!--            android:id="@+id/lvFood"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent" />-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvFood"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
@@ -82,7 +87,7 @@
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
             android:text="Total Price: "
-            android:textColor="#08432F"
+            android:textColor="@color/black"
             android:textSize="30dp"
             android:textStyle="italic" />
 
@@ -94,7 +99,7 @@
             android:layout_marginTop="15dp"
             android:layout_toRightOf="@id/tvPrice"
             android:text="0"
-            android:textColor="#08432F"
+            android:textColor="@color/black"
             android:textSize="30dp"
             android:textStyle="italic" />
 
@@ -107,7 +112,7 @@
             android:layout_marginBottom="5dp"
             android:layout_toRightOf="@+id/tvMoney"
             android:text="VNĐ"
-            android:textColor="#08432F"
+            android:textColor="@color/black"
             android:textSize="30dp"
             android:textStyle="italic" />
 
