@@ -20,7 +20,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
     FoodRecyclerViewAdapter foodRecyclerViewAdapter;
     TextView tvName, tvCart, tvMoney;
     ImageView imgRemove, imgAdd;
-    ImageView btOrder;
+    Button btOrder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,14 +35,15 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
     }
 
-//    private void addAndRemove() {
-//        imgAdd.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//            }
-//        });
-//    }
+    private void addAndRemove() {
+        imgAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int addCart = Integer.parseInt(tvCart.getText().toString());
+                tvCart.setText(Intent.parseIntent());
+            }
+        });
+    }
 
     private void getName() {
         Intent intent = getIntent();
