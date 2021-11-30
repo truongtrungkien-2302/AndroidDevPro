@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">FoodMiniProject</string>
+    <string name="food_tittle">Light Meals</string>
+    <string name="cart">Add to Cart</string>
 </resources>
