@@ -5,6 +5,23 @@ public class FoodMenu {
     String tvFood;
     float rbStart;
     String tvPrice;
+//    int imgRemove, imgAdd;
+
+//    public int getImgRemove() {
+//        return imgRemove;
+//    }
+//
+//    public void setImgRemove(int imgRemove) {
+//        this.imgRemove = imgRemove;
+//    }
+//
+//    public int getImgAdd() {
+//        return imgAdd;
+//    }
+//
+//    public void setImgAdd(int imgAdd) {
+//        this.imgAdd = imgAdd;
+//    }
 
     public FoodMenu(int imgFood, String tvFood, float rbStart, String tvPrice) {
         this.imgFood = imgFood;

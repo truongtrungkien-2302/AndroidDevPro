@@ -7,8 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,31 +20,36 @@ public class RecyclerViewActivity extends AppCompatActivity {
     RecyclerView rvFood;
     List<FoodMenu> foodMenuList;
     FoodRecyclerViewAdapter foodRecyclerViewAdapter;
-    TextView tvName, tvCart, tvMoney;
-    ImageView imgRemove, imgAdd;
+    TextView tvName, tvMoney;
     Button btOrder;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_view);
-
         findID();
         addRecyclerView();
+        removeAndAdd();
         getName();
-//        addAndRemove();
         clickOrder();
-
-
+        totalMoney();
     }
 
-    private void addAndRemove() {
-        imgAdd.setOnClickListener(new View.OnClickListener() {
+    private void removeAndAdd() {
+        foodRecyclerViewAdapter.setIconClickFoodRecyclerView(new IconClickFoodRecyclerView() {
             @Override
-            public void onClick(View view) {
-                int addCart = Integer.parseInt(tvCart.getText().toString());
-                tvCart.setText(Intent.parseIntent());
+            public void onClickRemove(FoodMenu foodMenu) {
+
+            }
+
+            @Override
+            public void onClickAdd(FoodMenu foodMenu) {
+                Toast.makeText(getBaseContext(), foodMenu.getTvFood(), Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    private void totalMoney() {
     }
 
     private void getName() {
@@ -63,10 +70,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
     private void findID() {
         rvFood = findViewById(R.id.rvMenu);
         tvName = findViewById(R.id.tvName);
-        tvCart = findViewById(R.id.tvCart);
         tvMoney = findViewById(R.id.tvMoney);
-        imgRemove = findViewById(R.id.imgRemove);
-        imgAdd = findViewById(R.id.imgAdd);
         btOrder = findViewById(R.id.btOrder);
     }
 
