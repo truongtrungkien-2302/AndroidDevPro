@@ -16,9 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    ImageView imgAdd, imgRemove;
-    TextView tvCart, tvName;
-    EditText etUsername, etPassword;
+    TextView tvName;
+    EditText etUsername;
     Button btnLogIn;
 
     @Override
@@ -27,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         tvName = findViewById(R.id.tvName);
         etUsername = findViewById(R.id.etUsername);
-        etPassword = findViewById(R.id.etPassword);
         btnLogIn = findViewById(R.id.btnLogIn);
 
         btnLogIn.setOnClickListener(new View.OnClickListener() {

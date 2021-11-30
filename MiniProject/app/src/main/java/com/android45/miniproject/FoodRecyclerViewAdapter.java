@@ -22,7 +22,7 @@ public class FoodRecyclerViewAdapter extends RecyclerView.Adapter<FoodRecyclerVi
     @NonNull
     @Override
     public FoodRecyclerViewAdapter.Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+        LayoutInflater layoutInflater =LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.icon_menu, parent, false);
         Viewholder viewholder = new Viewholder(view);
         return viewholder;
@@ -31,11 +31,10 @@ public class FoodRecyclerViewAdapter extends RecyclerView.Adapter<FoodRecyclerVi
     @Override
     public void onBindViewHolder(@NonNull FoodRecyclerViewAdapter.Viewholder holder, int position) {
         FoodMenu foodMenu = foodMenuList.get(position);
-
         holder.imgFood.setImageResource(foodMenu.getImgFood());
         holder.tvFood.setText(foodMenu.getTvFood());
-        holder.rbStart.setRating(foodMenu.getRbStart());
-        holder.tvPrice.setText(String.valueOf(foodMenu.getTvPrice()));
+        holder.rbStar.setRating(foodMenu.getRbStart());
+        holder.tvPrice.setText(foodMenu.getTvPrice());
     }
 
     @Override
@@ -45,14 +44,14 @@ public class FoodRecyclerViewAdapter extends RecyclerView.Adapter<FoodRecyclerVi
 
     public class Viewholder extends RecyclerView.ViewHolder {
         ImageView imgFood;
-        TextView tvFood, tvPrice;
-        RatingBar rbStart;
-
+        TextView tvFood;
+        RatingBar rbStar;
+        TextView tvPrice;
         public Viewholder(@NonNull View itemView) {
             super(itemView);
             imgFood = itemView.findViewById(R.id.imgFood);
             tvFood = itemView.findViewById(R.id.tvFood);
-            rbStart = itemView.findViewById(R.id.rbStar);
+            rbStar = itemView.findViewById(R.id.rbStar);
             tvPrice = itemView.findViewById(R.id.tvPrice);
         }
     }

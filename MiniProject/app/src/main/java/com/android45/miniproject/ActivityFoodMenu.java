@@ -16,7 +16,6 @@ public class ActivityFoodMenu extends AppCompatActivity {
 //    ListView lvFood;
     RecyclerView rvFood;
     List<FoodMenu> foodMenuList;
-    FoodMenu foodMenu1, foodMenu2, foodMenu3, foodMenu4, foodMenu5;
     TextView tvName;
     FoodRecyclerViewAdapter foodRecyclerViewAdapter;
 
@@ -25,12 +24,12 @@ public class ActivityFoodMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_menu);
         rvFood = findViewById(R.id.rvFood);
-        tvName = findViewById(R.id.tvName);
-
-        Intent intent = getIntent();
-
-        String strName = intent.getStringExtra("Keyname");
-        tvName.setText(strName);
+//        tvName = findViewById(R.id.tvName);
+//
+//        Intent intent = getIntent();
+//
+//        String strName = intent.getStringExtra("Keyname");
+//        tvName.setText(strName);
 
         foodMenuList = new ArrayList<>();
         foodMenuList.add(new FoodMenu(R.drawable.eggsand, "Egg Salad Sandwich", 4, "60.000"));
