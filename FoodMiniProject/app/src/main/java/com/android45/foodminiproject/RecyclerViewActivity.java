@@ -6,7 +6,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.*;
 
@@ -14,20 +18,58 @@ public class RecyclerViewActivity extends AppCompatActivity {
     RecyclerView rvFood;
     List<FoodMenu> foodMenuList;
     FoodRecyclerViewAdapter foodRecyclerViewAdapter;
-    TextView tvName;
-
+    TextView tvName, tvCart, tvMoney;
+    ImageView imgRemove, imgAdd;
+    ImageView btOrder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_view);
 
-        rvFood = findViewById(R.id.rvMenu);
-        tvName = findViewById(R.id.tvName);
+        findID();
+        addRecyclerView();
+        getName();
+//        addAndRemove();
+        clickOrder();
 
+
+    }
+
+//    private void addAndRemove() {
+//        imgAdd.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//            }
+//        });
+//    }
+
+    private void getName() {
         Intent intent = getIntent();
         String strName = intent.getStringExtra("Keyname");
         tvName.setText(strName);
+    }
 
+    private void clickOrder() {
+        btOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getBaseContext(), "Thank you! Your order is sent to restaurant!", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void findID() {
+        rvFood = findViewById(R.id.rvMenu);
+        tvName = findViewById(R.id.tvName);
+        tvCart = findViewById(R.id.tvCart);
+        tvMoney = findViewById(R.id.tvMoney);
+        imgRemove = findViewById(R.id.imgRemove);
+        imgAdd = findViewById(R.id.imgAdd);
+        btOrder = findViewById(R.id.btOrder);
+    }
+
+    private void addRecyclerView() {
         foodMenuList = new ArrayList<>();
         foodMenuList.add(new FoodMenu(R.drawable.eggsand, "Egg Salad Sandwich", 4, "60.000"));
         foodMenuList.add(new FoodMenu(R.drawable.ham, "Ham & Cheese Sandwich", 5, "65.000"));
