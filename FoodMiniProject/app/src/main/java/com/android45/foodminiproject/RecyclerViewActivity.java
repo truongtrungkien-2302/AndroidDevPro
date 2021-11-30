@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import java.util.*;
 
@@ -12,13 +14,19 @@ public class RecyclerViewActivity extends AppCompatActivity {
     RecyclerView rvFood;
     List<FoodMenu> foodMenuList;
     FoodRecyclerViewAdapter foodRecyclerViewAdapter;
+    TextView tvName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_view);
 
-        rvFood = findViewById(R.id.rvFood);
+        rvFood = findViewById(R.id.rvMenu);
+        tvName = findViewById(R.id.tvName);
+
+        Intent intent = getIntent();
+        String strName = intent.getStringExtra("Keyname");
+        tvName.setText(strName);
 
         foodMenuList = new ArrayList<>();
         foodMenuList.add(new FoodMenu(R.drawable.eggsand, "Egg Salad Sandwich", 4, "60.000"));
@@ -30,6 +38,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getBaseContext(), 1, RecyclerView.VERTICAL, false);
 
         foodRecyclerViewAdapter = new FoodRecyclerViewAdapter(foodMenuList);
+        rvFood.setLayoutManager(layoutManager);
         rvFood.setAdapter(foodRecyclerViewAdapter);
     }
 }
