@@ -95,6 +95,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
         foodMenuList.add(new FoodMenu(R.drawable.turkey, "French fries & Turkey Sandwich", 4.5F, "70.000"));
         foodMenuList.add(new FoodMenu(R.drawable.beef, "Beef Rib Burger", 5, "80.000"));
         foodMenuList.add(new FoodMenu(R.drawable.fries, "Fries and BBQ sauce", 4.5F, "60.000"));
+        foodMenuList.add(new FoodMenu(R.drawable.fries, "Fries and BBQ sauce", 4.5F, "60.000"));
 
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getBaseContext(), 1, RecyclerView.VERTICAL, false);
 
@@ -105,7 +106,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
         foodRecyclerViewAdapter.setIconClickFoodRecyclerView(new IconClickFoodRecyclerView() {
             @Override
             public void onClickAddToCart(FoodMenu foodMenu) {
-                Toast.makeText(getBaseContext(), "Add To Cart Successfully", Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(), foodMenu.getTvFood() + "Added To Cart", Toast.LENGTH_LONG).show();
             }
         });
     }
