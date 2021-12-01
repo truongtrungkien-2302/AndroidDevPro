@@ -1,4 +1,4 @@
-package com.android45.foodminiproject;
+package com.android45.foodminiproject.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android45.foodminiproject.R;
 
 public class IconRecyclerViewActivity extends AppCompatActivity {
     ImageView imgRemove, imgAdd;
@@ -32,8 +34,6 @@ public class IconRecyclerViewActivity extends AppCompatActivity {
     }
 
     private void findID() {
-        imgRemove = findViewById(R.id.imgRemove);
-        imgAdd = findViewById(R.id.imgAdd);
-        tvCart = findViewById(R.id.tvCart);
+
     }
 }

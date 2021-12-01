@@ -1,14 +1,19 @@
-package com.android45.foodminiproject;
+package com.android45.foodminiproject.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.android45.foodminiproject.model.FoodMenu;
+import com.android45.foodminiproject.Interface.IconClickFoodRecyclerView;
+import com.android45.foodminiproject.R;
 
 import java.util.List;
 
@@ -41,19 +46,13 @@ public class FoodRecyclerViewAdapter extends RecyclerView.Adapter<FoodRecyclerVi
         holder.rbStar.setRating(foodMenu.getRbStart());
         holder.tvPrice.setText(foodMenu.getTvPrice());
 
-        holder.imgRemove.setOnClickListener(new View.OnClickListener() {
+        holder.btAddToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                iconClickFoodRecyclerView.onClickRemove(foodMenu);
+                iconClickFoodRecyclerView.onClickAddToCart(foodMenu);
             }
         });
 
-        holder.imgAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                iconClickFoodRecyclerView.onClickAdd(foodMenu);
-            }
-        });
     }
 
     @Override
@@ -66,7 +65,8 @@ public class FoodRecyclerViewAdapter extends RecyclerView.Adapter<FoodRecyclerVi
         TextView tvFood;
         RatingBar rbStar;
         TextView tvPrice;
-        ImageView imgRemove, imgAdd;
+        ImageView imgCart;
+        Button btAddToCart;
 
         public Viewholder(@NonNull View itemView) {
             super(itemView);
@@ -74,9 +74,8 @@ public class FoodRecyclerViewAdapter extends RecyclerView.Adapter<FoodRecyclerVi
             tvFood = itemView.findViewById(R.id.tvFood);
             rbStar = itemView.findViewById(R.id.rbStar);
             tvPrice = itemView.findViewById(R.id.tvPrice);
-
-            imgRemove = itemView.findViewById(R.id.imgRemove);
-            imgAdd = itemView.findViewById(R.id.imgAdd);
+            imgCart = itemView.findViewById(R.id.imgCart);
+            btAddToCart = itemView.findViewById(R.id.btAddToCart);
         }
     }
 }

@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_marginHorizontal="5dp"
-    android:layout_marginVertical="5dp"
-    android:background="@drawable/custom_layout_menu"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/imgFood"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_alignParentLeft="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
@@ -38,22 +35,11 @@
         android:textSize="18dp"
         android:textStyle="bold" />
 
-    <RatingBar
-        android:id="@+id/rbStar"
-        style="@style/Widget.AppCompat.RatingBar.Small"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvFood"
-        android:layout_marginTop="5dp"
-        android:layout_toRightOf="@+id/imgFood"
-        android:numStars="5"
-        android:progressTint="@color/progess_bar" />
-
     <TextView
         android:id="@+id/tvShowPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rbStar"
+        android:layout_below="@id/tvFood"
         android:layout_toRightOf="@id/imgFood"
         android:text="Price: "
         android:textColor="@color/black"
@@ -64,7 +50,7 @@
         android:id="@+id/tvPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rbStar"
+        android:layout_below="@id/tvFood"
         android:layout_toRightOf="@id/tvShowPrice"
         android:text="35.000"
         android:textColor="@color/black"
@@ -75,24 +61,47 @@
         android:id="@+id/tvVND"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rbStar"
+        android:layout_below="@id/tvFood"
         android:layout_toRightOf="@id/tvPrice"
         android:text="VNĐ"
         android:textColor="@color/black"
         android:textSize="16dp"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btAddToCart"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
+    <ImageView
+        android:id="@+id/imgRemove"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_below="@id/tvPrice"
-        android:layout_marginLeft="11dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="5dp"
         android:layout_toRightOf="@id/imgFood"
-        android:backgroundTint="@color/black"
-        android:text="Add to Cart"
-        android:textColor="@color/white"
-        android:textSize="12dp" />
+        android:background="@drawable/custom_layout"
+        android:src="@drawable/ic_baseline_remove_24" />
+
+    <TextView
+        android:id="@+id/tvCart"
+        android:layout_width="70dp"
+        android:layout_height="25dp"
+        android:layout_below="@id/tvPrice"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="4dp"
+        android:layout_toRightOf="@id/imgRemove"
+        android:background="@drawable/custom_layout_textview"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imgAdd"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_below="@id/tvPrice"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/tvCart"
+        android:background="@drawable/custom_layout"
+        android:src="@drawable/ic_baseline_add_24" />
 
 </RelativeLayout>

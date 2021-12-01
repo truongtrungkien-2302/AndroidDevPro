@@ -1,4 +1,4 @@
-package com.android45.foodminiproject;
+package com.android45.foodminiproject.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,13 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.android45.foodminiproject.R;
+import com.android45.foodminiproject.activity.RecyclerViewActivity;
 
 public class MainActivity extends AppCompatActivity {
     TextView tvName;

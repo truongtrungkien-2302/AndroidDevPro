@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".RecyclerViewActivity">
+    tools:context=".activity.RecyclerViewActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -31,17 +31,42 @@
             android:textSize="25dp"
             android:textStyle="italic|bold" />
 
+        <!--        <ImageView-->
+        <!--            android:id="@+id/imgCart"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_alignParentRight="true"-->
+        <!--            android:layout_marginStart="5dp"-->
+        <!--            android:layout_marginEnd="5dp"-->
+        <!--            android:layout_marginBottom="5dp"-->
+        <!--            android:backgroundTint="@color/black"-->
+        <!--            android:padding="5dp"-->
+        <!--            android:src="@drawable/ic_baseline_menu_24" />-->
+
         <ImageView
             android:id="@+id/imgCart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_alignParentRight="true"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
-            android:backgroundTint="@color/black"
-            android:padding="5dp"
-            android:src="@drawable/ic_baseline_menu_24" />
+            android:src="@drawable/ic_baseline_shopping_cart_24" />
+
+        <TextView
+            android:id="@+id/tvCartBadge"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="top|end"
+            android:background="@drawable/cart_shape"
+            android:gravity="center"
+            android:text="5"
+            android:textColor="@color/white" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -65,66 +90,65 @@
             android:id="@+id/rvMenu"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.8">
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_weight="0.8">-->
 
-        <TextView
-            android:id="@+id/tvPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
-            android:text="Total Price: "
-            android:textColor="@color/black"
-            android:textSize="30dp"
-            android:textStyle="italic" />
+<!--        <TextView-->
+<!--            android:id="@+id/tvPrice"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginEnd="5dp"-->
+<!--            android:layout_marginBottom="5dp"-->
+<!--            android:text="Total Price: "-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="30dp"-->
+<!--            android:textStyle="italic" />-->
 
-        <TextView
-            android:id="@+id/tvMoney"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_toRightOf="@id/tvPrice"
-            android:text="0"
-            android:textColor="@color/black"
-            android:textSize="30dp"
-            android:textStyle="italic" />
+<!--        <TextView-->
+<!--            android:id="@+id/tvMoney"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginEnd="5dp"-->
+<!--            android:layout_marginBottom="5dp"-->
+<!--            android:layout_toRightOf="@id/tvPrice"-->
+<!--            android:text="0"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="30dp"-->
+<!--            android:textStyle="italic" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_toRightOf="@+id/tvMoney"
-            android:text="VNĐ"
-            android:textColor="@color/black"
-            android:textSize="30dp"
-            android:textStyle="italic" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginEnd="5dp"-->
+<!--            android:layout_marginBottom="5dp"-->
+<!--            android:layout_toRightOf="@+id/tvMoney"-->
+<!--            android:text="VNĐ"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="30dp"-->
+<!--            android:textStyle="italic" />-->
 
-        <Button
-            android:id="@+id/btOrder"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerInParent="true"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginBottom="8dp"
-            android:backgroundTint="@color/black"
-            android:text="Order"
-            android:textColor="@color/white" />
+<!--        <Button-->
+<!--            android:id="@+id/btOrder"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:layout_marginHorizontal="10dp"-->
+<!--            android:layout_marginBottom="8dp"-->
+<!--            android:backgroundTint="@color/black"-->
+<!--            android:text="Order"-->
+<!--            android:textColor="@color/white" />-->
 
-    </RelativeLayout>
+<!--    </RelativeLayout>-->
 
 </LinearLayout>
