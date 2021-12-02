@@ -48,7 +48,7 @@ public class FoodRecyclerViewAdapter extends RecyclerView.Adapter<FoodRecyclerVi
 
         holder.btAddToCart.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 iconClickFoodRecyclerView.onClickAddToCart(foodMenu);
             }
         });

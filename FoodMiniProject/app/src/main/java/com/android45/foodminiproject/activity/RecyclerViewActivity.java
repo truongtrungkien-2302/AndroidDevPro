@@ -8,8 +8,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +21,7 @@ import com.android45.foodminiproject.model.FoodMenu;
 import com.android45.foodminiproject.adapter.FoodRecyclerViewAdapter;
 import com.android45.foodminiproject.R;
 
+import java.text.DecimalFormat;
 import java.util.*;
 
 public class RecyclerViewActivity extends AppCompatActivity {
@@ -26,6 +29,8 @@ public class RecyclerViewActivity extends AppCompatActivity {
     List<FoodMenu> foodMenuList;
     List<AddToCart> addToCartList;
     FoodRecyclerViewAdapter foodRecyclerViewAdapter;
+    ImageView imgFood;
+    Spinner quantitySpinner;
     TextView tvName, tvPrice;
     ImageView imgCart;
 
@@ -38,6 +43,13 @@ public class RecyclerViewActivity extends AppCompatActivity {
         getName();
         clickImgCart();
         addCart();
+//        addQuantitySpinner();
+    }
+
+    private void addQuantitySpinner() {
+        Integer[] quantity = new Integer[]{1, 2, 3, 4, 5, 6 ,7 , 8, 9, 10};
+        ArrayAdapter<Integer> integerArrayAdapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_dropdown_item, quantity);
+        quantitySpinner.setAdapter(integerArrayAdapter);
     }
 
     private void addCart() {
@@ -81,9 +93,11 @@ public class RecyclerViewActivity extends AppCompatActivity {
     }
 
     private void findID() {
+        imgFood = findViewById(R.id.imgFood);
         rvFood = findViewById(R.id.rvMenu);
         tvName = findViewById(R.id.tvName);
         tvPrice = findViewById(R.id.tvPrice);
+        quantitySpinner = findViewById(R.id.quantitySpinner);
         imgCart = findViewById(R.id.imgCart);
     }
 
@@ -107,7 +121,35 @@ public class RecyclerViewActivity extends AppCompatActivity {
             @Override
             public void onClickAddToCart(FoodMenu foodMenu) {
                 Toast.makeText(getBaseContext(), foodMenu.getTvFood() + "Added To Cart", Toast.LENGTH_LONG).show();
+//                getInfor();
+            }
+
+            @Override
+            public void onClickItem(FoodRecyclerViewAdapter foodRecyclerViewAdapter, View view, int quantity, long l) {
+                Intent intent = new Intent(getBaseContext(), CartActivity.class);
+                intent.putExtra("productInfor", foodMenuList.get(quantity));
+                startActivity(intent);
             }
         });
+
+        if (addToCartList != null) {
+
+        } else {
+            addToCartList = new ArrayList<>();
+        }
+    }
+
+    private void getInfor() {
+        int image = 0;
+        String name = "";
+        String money = "";
+        FoodMenu foodMenu = (FoodMenu) getIntent().getSerializableExtra("productInfor");
+        image = foodMenu.getImgFood();
+        name = foodMenu.getTvFood();
+        money = foodMenu.getTvPrice();
+        imgFood.setImageResource(image);
+        tvName.setText(name);
+        DecimalFormat decimalFormat = new DecimalFormat("###.###.###");
+        tvPrice.setText("Giá: " + decimalFormat.format(String.valueOf(money)) + "VNĐ");
     }
 }

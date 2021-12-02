@@ -1,6 +1,8 @@
 package com.android45.foodminiproject.model;
 
-public class FoodMenu {
+import java.io.Serializable;
+
+public class FoodMenu implements Serializable {
     int imgFood;
     String tvFood;
     float rbStart;
