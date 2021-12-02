@@ -46,13 +46,25 @@ public class FoodRecyclerViewAdapter extends RecyclerView.Adapter<FoodRecyclerVi
         holder.rbStar.setRating(foodMenu.getRbStart());
         holder.tvPrice.setText(foodMenu.getTvPrice());
 
+//        holder.btAddToCart.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                iconClickFoodRecyclerView.onClickAddToCart(foodMenu);
+//            }
+//        });
+
         holder.btAddToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 iconClickFoodRecyclerView.onClickAddToCart(foodMenu);
             }
         });
-
+        holder.btAddToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iconClickFoodRecyclerView.onClickItem(foodMenu);
+            }
+        });
     }
 
     @Override
@@ -64,7 +76,7 @@ public class FoodRecyclerViewAdapter extends RecyclerView.Adapter<FoodRecyclerVi
         ImageView imgFood;
         TextView tvFood;
         RatingBar rbStar;
-        TextView tvPrice;
+        TextView tvPrice, tvMoney;
         ImageView imgCart;
         Button btAddToCart;
 
@@ -72,6 +84,7 @@ public class FoodRecyclerViewAdapter extends RecyclerView.Adapter<FoodRecyclerVi
             super(itemView);
             imgFood = itemView.findViewById(R.id.imgFood);
             tvFood = itemView.findViewById(R.id.tvFood);
+            tvMoney = itemView.findViewById(R.id.tvMoney);
             rbStar = itemView.findViewById(R.id.rbStar);
             tvPrice = itemView.findViewById(R.id.tvPrice);
             imgCart = itemView.findViewById(R.id.imgCart);

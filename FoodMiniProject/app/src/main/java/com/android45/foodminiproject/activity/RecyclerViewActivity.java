@@ -31,7 +31,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
     FoodRecyclerViewAdapter foodRecyclerViewAdapter;
     ImageView imgFood;
     Spinner quantitySpinner;
-    TextView tvName, tvPrice;
+    TextView tvName, tvPrice, tvMoney, tvCartBadge;
     ImageView imgCart;
 
     @Override
@@ -42,13 +42,49 @@ public class RecyclerViewActivity extends AppCompatActivity {
         addRecyclerView();
         getName();
         clickImgCart();
+        clickButtonAddToCart();
         addCart();
 //        addQuantitySpinner();
     }
 
+    private void clickButtonAddToCart() {
+        foodRecyclerViewAdapter.setIconClickFoodRecyclerView(new IconClickFoodRecyclerView() {
+            @Override
+            public void onClickAddToCart(FoodMenu foodMenu) {
+                Toast.makeText(getBaseContext(), foodMenu.getTvFood() + "Added To Cart", Toast.LENGTH_LONG).show();
+//                getInfor();
+            }
+
+            @Override
+            public void onClickItem(FoodMenu foodMenu) {
+//                Intent intent = new Intent(getBaseContext(), CartActivity.class);
+//                int quantity = 0;
+//                intent.putExtra("productInfor", foodMenuList.get(quantity));
+//                startActivity(intent);
+
+                ArrayList<Integer> priceFood = new ArrayList<>(foodMenuList.size());
+                priceFood.add(Integer.parseInt(foodMenu.getTvPrice()));
+                int price = 0;
+                for (int i = 1; i <= priceFood.size(); i++) {
+                    price += Integer.parseInt(foodMenu.getTvPrice());
+                }
+                tvMoney.setText(String.valueOf(price) + "VNĐ");
+                int quantity = Integer.parseInt(tvCartBadge.getText().toString()) + 1;
+                tvCartBadge.setText(String.valueOf(quantity));
+            }
+        });
+
+//        if (addToCartList != null) {
+//
+//        } else {
+//            addToCartList = new ArrayList<>();
+//        }
+    }
+
     private void addQuantitySpinner() {
-        Integer[] quantity = new Integer[]{1, 2, 3, 4, 5, 6 ,7 , 8, 9, 10};
-        ArrayAdapter<Integer> integerArrayAdapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_dropdown_item, quantity);
+        Integer[] quantity = new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        ArrayAdapter<Integer> integerArrayAdapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_item, quantity);
+        integerArrayAdapter.setDropDownViewResource(R.layout.cart_row);
         quantitySpinner.setAdapter(integerArrayAdapter);
     }
 
@@ -97,46 +133,26 @@ public class RecyclerViewActivity extends AppCompatActivity {
         rvFood = findViewById(R.id.rvMenu);
         tvName = findViewById(R.id.tvName);
         tvPrice = findViewById(R.id.tvPrice);
+        tvMoney = findViewById(R.id.tvMoney);
+        tvCartBadge = findViewById(R.id.tvCartBadge);
         quantitySpinner = findViewById(R.id.quantitySpinner);
         imgCart = findViewById(R.id.imgCart);
     }
 
     private void addRecyclerView() {
         foodMenuList = new ArrayList<>();
-        foodMenuList.add(new FoodMenu(R.drawable.eggsand, "Egg Salad Sandwich", 4, "60.000"));
-        foodMenuList.add(new FoodMenu(R.drawable.ham, "Ham & Cheese Sandwich", 5, "65.000"));
-        foodMenuList.add(new FoodMenu(R.drawable.chicken, "Chicken Salad Sandwich", 4, "75.000"));
-        foodMenuList.add(new FoodMenu(R.drawable.turkey, "French fries & Turkey Sandwich", 4.5F, "70.000"));
-        foodMenuList.add(new FoodMenu(R.drawable.beef, "Beef Rib Burger", 5, "80.000"));
-        foodMenuList.add(new FoodMenu(R.drawable.fries, "Fries and BBQ sauce", 4.5F, "60.000"));
-        foodMenuList.add(new FoodMenu(R.drawable.fries, "Fries and BBQ sauce", 4.5F, "60.000"));
+        foodMenuList.add(new FoodMenu(R.drawable.eggsand, "Egg Salad Sandwich", 4, "60000"));
+        foodMenuList.add(new FoodMenu(R.drawable.ham, "Ham & Cheese Sandwich", 5, "65000"));
+        foodMenuList.add(new FoodMenu(R.drawable.chicken, "Chicken Salad Sandwich", 4, "75000"));
+        foodMenuList.add(new FoodMenu(R.drawable.turkey, "French fries & Turkey Sandwich", 4.5F, "70000"));
+        foodMenuList.add(new FoodMenu(R.drawable.fries, "Fries and BBQ sauce", 4.5F, "60000"));
+        foodMenuList.add(new FoodMenu(R.drawable.beef, "Beef Rib Burger", 5, "80000"));
 
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getBaseContext(), 1, RecyclerView.VERTICAL, false);
 
         foodRecyclerViewAdapter = new FoodRecyclerViewAdapter(foodMenuList);
         rvFood.setLayoutManager(layoutManager);
         rvFood.setAdapter(foodRecyclerViewAdapter);
-
-        foodRecyclerViewAdapter.setIconClickFoodRecyclerView(new IconClickFoodRecyclerView() {
-            @Override
-            public void onClickAddToCart(FoodMenu foodMenu) {
-                Toast.makeText(getBaseContext(), foodMenu.getTvFood() + "Added To Cart", Toast.LENGTH_LONG).show();
-//                getInfor();
-            }
-
-            @Override
-            public void onClickItem(FoodRecyclerViewAdapter foodRecyclerViewAdapter, View view, int quantity, long l) {
-                Intent intent = new Intent(getBaseContext(), CartActivity.class);
-                intent.putExtra("productInfor", foodMenuList.get(quantity));
-                startActivity(intent);
-            }
-        });
-
-        if (addToCartList != null) {
-
-        } else {
-            addToCartList = new ArrayList<>();
-        }
     }
 
     private void getInfor() {

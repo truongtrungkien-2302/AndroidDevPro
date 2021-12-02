@@ -42,7 +42,7 @@ public class CartActivity extends AppCompatActivity {
     }
 
     private void catchEvenSpinner() {
-        Integer[] quantity = new Integer[]{1, 2, 3, 4, 5, 6 ,7 , 8, 9, 10};
+        Integer[] quantity = new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         ArrayAdapter<Integer> integerArrayAdapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_dropdown_item, quantity);
         quantitySpinner.setAdapter(integerArrayAdapter);
 
@@ -69,9 +69,8 @@ public class CartActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getBaseContext(), "Thanks for your order!", Toast.LENGTH_LONG).show();
-                int quantity = Integer.parseInt(quantitySpinner.getSelectedItem().toString());
-    long newPrice = (long) (quantity * Double.parseDouble(money));
-//    RecyclerViewActivity.
+//                int quantity = Integer.parseInt(quantitySpinner.getSelectedItem().toString());
+//                long newPrice = (long) (quantity * Double.parseDouble(money));
             }
         });
     }
