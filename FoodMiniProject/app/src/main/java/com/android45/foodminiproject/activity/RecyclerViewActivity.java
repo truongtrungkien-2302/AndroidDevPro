@@ -60,6 +60,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
 //                int quantity = 0;
 //                intent.putExtra("productInfor", foodMenuList.get(quantity));
 //                startActivity(intent);
+                // Nếu để 4 dòng trên chuyển sang màn CartActivity luôn khi mà nhấn Button Add to Cart
 
                 ArrayList<Integer> priceFood = new ArrayList<>(foodMenuList.size());
                 priceFood.add(Integer.parseInt(foodMenu.getTvPrice()));
@@ -68,8 +69,8 @@ public class RecyclerViewActivity extends AppCompatActivity {
                     price += Integer.parseInt(foodMenu.getTvPrice());
                 }
                 tvMoney.setText(String.valueOf(price) + "VNĐ");
-                int quantity = Integer.parseInt(tvCartBadge.getText().toString()) + 1;
-                tvCartBadge.setText(String.valueOf(quantity));
+                int quantityCart = Integer.parseInt(tvCartBadge.getText().toString()) + 1;
+                tvCartBadge.setText(String.valueOf(quantityCart));
             }
         });
 
