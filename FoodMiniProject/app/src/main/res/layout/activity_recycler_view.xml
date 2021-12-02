@@ -45,8 +45,8 @@
 
         <ImageView
             android:id="@+id/imgCart"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentRight="true"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
@@ -55,9 +55,9 @@
 
         <TextView
             android:id="@+id/tvCartBadge"
-            style="@style/TextAppearance.MaterialComponents.Caption"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:textSize="15sp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_alignParentRight="true"
             android:layout_gravity="top|end"
             android:layout_marginStart="5dp"

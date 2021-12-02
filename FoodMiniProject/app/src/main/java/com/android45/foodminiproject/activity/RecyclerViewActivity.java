@@ -52,7 +52,6 @@ public class RecyclerViewActivity extends AppCompatActivity {
             @Override
             public void onClickAddToCart(FoodMenu foodMenu) {
                 Toast.makeText(getBaseContext(), foodMenu.getTvFood() + "Added To Cart", Toast.LENGTH_LONG).show();
-//                getInfor();
             }
 
             @Override
