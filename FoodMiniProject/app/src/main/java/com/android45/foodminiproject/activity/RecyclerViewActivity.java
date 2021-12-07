@@ -17,10 +17,12 @@ import android.widget.Toast;
 
 import com.android45.foodminiproject.Interface.IconClickFoodRecyclerView;
 import com.android45.foodminiproject.model.AddToCart;
+import com.android45.foodminiproject.model.Cart;
 import com.android45.foodminiproject.model.FoodMenu;
 import com.android45.foodminiproject.adapter.FoodRecyclerViewAdapter;
 import com.android45.foodminiproject.R;
 
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.*;
 
@@ -71,7 +73,15 @@ public class RecyclerViewActivity extends AppCompatActivity {
                 tvMoney.setText(String.valueOf(price) + "VNĐ");
                 int quantityCart = Integer.parseInt(tvCartBadge.getText().toString()) + 1;
                 tvCartBadge.setText(String.valueOf(quantityCart));
-            }
+
+
+//                Cart cart = null;
+//                foodMenuList = cart.getFoodMenuList();
+//                BigDecimal total = BigDecimal.ZERO;
+//
+//                for (FoodMenu menu : foodMenuList) {
+//total = total.add(menu.getTvPrice().)
+                }
         });
 
 //        if (addToCartList != null) {
