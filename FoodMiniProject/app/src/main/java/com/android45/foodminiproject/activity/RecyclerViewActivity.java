@@ -1,7 +1,6 @@
 package com.android45.foodminiproject.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -9,27 +8,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android45.foodminiproject.Interface.IconClickFoodRecyclerView;
-import com.android45.foodminiproject.model.AddToCart;
-import com.android45.foodminiproject.model.Cart;
 import com.android45.foodminiproject.model.FoodMenu;
 import com.android45.foodminiproject.adapter.FoodRecyclerViewAdapter;
 import com.android45.foodminiproject.R;
 
-import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.*;
 
 public class RecyclerViewActivity extends AppCompatActivity {
     RecyclerView rvFood;
     List<FoodMenu> foodMenuList;
-    List<AddToCart> addToCartList;
     FoodRecyclerViewAdapter foodRecyclerViewAdapter;
     ImageView imgFood;
     Spinner quantitySpinner;
@@ -45,7 +39,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
         getName();
         clickImgCart();
         clickButtonAddToCart();
-        addCart();
+//        addCart();
 //        addQuantitySpinner();
     }
 
@@ -74,21 +68,8 @@ public class RecyclerViewActivity extends AppCompatActivity {
                 int quantityCart = Integer.parseInt(tvCartBadge.getText().toString()) + 1;
                 tvCartBadge.setText(String.valueOf(quantityCart));
 
-
-//                Cart cart = null;
-//                foodMenuList = cart.getFoodMenuList();
-//                BigDecimal total = BigDecimal.ZERO;
-//
-//                for (FoodMenu menu : foodMenuList) {
-//total = total.add(menu.getTvPrice().)
                 }
         });
-
-//        if (addToCartList != null) {
-//
-//        } else {
-//            addToCartList = new ArrayList<>();
-//        }
     }
 
     private void addQuantitySpinner() {
@@ -96,14 +77,6 @@ public class RecyclerViewActivity extends AppCompatActivity {
         ArrayAdapter<Integer> integerArrayAdapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_item, quantity);
         integerArrayAdapter.setDropDownViewResource(R.layout.cart_row);
         quantitySpinner.setAdapter(integerArrayAdapter);
-    }
-
-    private void addCart() {
-        if (addToCartList != null) {
-
-        } else {
-            addToCartList = new ArrayList<>();
-        }
     }
 
 

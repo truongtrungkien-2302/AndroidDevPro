@@ -46,13 +46,6 @@ public class FoodRecyclerViewAdapter extends RecyclerView.Adapter<FoodRecyclerVi
         holder.rbStar.setRating(foodMenu.getRbStart());
         holder.tvPrice.setText(foodMenu.getTvPrice());
 
-//        holder.btAddToCart.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                iconClickFoodRecyclerView.onClickAddToCart(foodMenu);
-//            }
-//        });
-
         holder.btAddToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

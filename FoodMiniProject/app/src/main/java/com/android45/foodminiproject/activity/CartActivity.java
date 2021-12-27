@@ -13,12 +13,6 @@ import android.widget.Toast;
 
 import com.android45.foodminiproject.R;
 import com.android45.foodminiproject.adapter.CartAdapter;
-import com.android45.foodminiproject.model.AddToCart;
-import com.android45.foodminiproject.model.FoodMenu;
-
-import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.List;
 
 public class CartActivity extends AppCompatActivity {
     ImageView imgFood;
